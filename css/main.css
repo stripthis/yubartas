@@ -459,17 +459,374 @@ h3 {
   margin-bottom: 11px;
 }
 p {
-  font-size: 0.875em;
+  font-size: 1em;
   /* 16px is the default em size */
-  line-height: 1.5714285714285714em;
-  /* = 22px/14px */
-  margin-bottom: 22px;
+  line-height: 1.5em;
+  /* = 24px/16px */
+  margin-bottom: 24px;
+}
+/* *********************************************************************************************************************
+	One% CSS Grid - 12 Columns Fluid CSS Grid System
+
+	Why One% ? Let’s count ...
+		we have 12 columns (magic number divided by 2, 3, 4, 6)
+		for 12 columns we need 11 margins
+		so if we count margin 3%, then 3% * 11 margins = 33%
+		and if we count width of 1 column 5.5%, than 5.5% * 12 columns = 66%
+		in the end we have 33% + 66% = 99% aaand ???
+		1% is still here so that's the name - One%
+
+	2 starting options ? Let’s count a bit more ...
+		1200px - perfectly fits 1280 screens
+			12 columns
+			margin 3% / 36px (full-width)
+			col1 5.5% / 66px (full-width)
+
+		1000px - perfectly fits 1024 screens
+			12 columns
+			margin 3% / 30px (full-width)
+			col1 5.5% / 55px (full-width)
+*/
+/**
+ * Main container for all
+ */
+.grid {
+  margin: 0 auto;
+  padding: 0 0 0 1%;
+  max-width: 1220px;
+}
+.row {
+  clear: both;
+  padding: 0 10px;
+}
+/**
+ * Common columns definitions
+ */
+.col1,
+.col2,
+.col3,
+.col4,
+.col5,
+.col6,
+.col7,
+.col8,
+.col9,
+.col10,
+.col11,
+.col12 {
+  float: left;
+  margin: 0 3% 0 0;
+}
+.col1.last,
+.col2.last,
+.col3.last,
+.col4.last,
+.col5.last,
+.col6.last,
+.col7.last,
+.col8.last,
+.col9.last,
+.col10.last,
+.col11.last,
+.col12 {
+  margin: 0;
+}
+.col1 {
+  width: 5.5%;
+}
+.col2 {
+  width: 14%;
+}
+.col3 {
+  width: 22.5%;
+}
+.col4 {
+  width: 31%;
+}
+.col5 {
+  width: 39.5%;
+}
+.col6 {
+  width: 48%;
+}
+.col7 {
+  width: 56.5%;
+}
+.col8 {
+  width: 65%;
+}
+.col9 {
+  width: 73.5%;
+}
+.col10 {
+  width: 82%;
+}
+.col11 {
+  width: 90.5%;
+}
+.col12 {
+  width: 99%;
+  margin: 0;
+}
+.col1 img,
+.col2 img,
+.col3 img,
+.col4 img,
+.col5 img,
+.col6 img,
+.col7 img,
+.col8 img,
+.col9 img,
+.col10 img,
+.col11 img,
+.col12 img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+/**
+ * Small devices
+ */
+@media all and (max-width: 768px) {
+  .col1,
+  .col2,
+  .col3,
+  .col4,
+  .col5,
+  .col6,
+  .col7,
+  .col8,
+  .col9,
+  .col10,
+  .col11 {
+    float: none;
+    width: 99%;
+  }
+}
+.logo-wrapper {
+  float: left;
+  margin: 1em;
+  margin-left: -100%;
+  width: 150px;
+}
+.logo-wrapper .logo {
+  background: transparent url("../img/logo_white.png") 0 0 no-repeat;
+  background-size: 150px 150px;
+  width: 150px;
+  height: 150px;
 }
 .navigation {
-  border: 1px solid blue;
+  float: left;
+  display: block;
+  width: 100%;
+  margin-left: 0;
+  margin-top: 93px;
+}
+.navigation ul {
+  padding: 0;
+  margin: 0;
+  margin-left: 150px;
+  list-style-type: none;
+  background: #FFF;
+  /*
+   * For IE 6/7 only
+   * Include this rule to trigger hasLayout and contain floats.
+   */
+  /*
+   * Clearfix: contain floats
+   *
+   * For modern browsers
+   * 1. The space content is one way to avoid an Opera bug when the
+   *	`contenteditable` attribute is included anywhere else in the document.
+   *	Otherwise it causes space to appear at the top and bottom of elements
+   *	that receive the `clearfix` class.
+   * 2. The use of `table` rather than `block` is only necessary if using
+   *	`:before` to contain the top-margins of child elements.
+   */
+  /*
+   * For IE 6/7 only
+   * Include this rule to trigger hasLayout and contain floats.
+   */
+  zoom: 1;
+  /*
+   * Clearfix: contain floats
+   *
+   * For modern browsers
+   * 1. The space content is one way to avoid an Opera bug when the
+   *	`contenteditable` attribute is included anywhere else in the document.
+   *	Otherwise it causes space to appear at the top and bottom of elements
+   *	that receive the `clearfix` class.
+   * 2. The use of `table` rather than `block` is only necessary if using
+   *	`:before` to contain the top-margins of child elements.
+   */
+}
+.navigation ul:before,
+.navigation ul:after {
+  content: "";
+  display: table;
+}
+.navigation ul:after {
+  clear: both;
+}
+.navigation ul:before,
+.navigation ul:after {
+  content: "";
+  display: table;
+}
+.navigation ul:after {
+  clear: both;
+}
+.navigation ul li {
+  float: left;
+  padding: .5em 1em;
+}
+.navigation ul li a {
+  text-decoration: none;
+  font-size: 1.25em;
+  color: black;
+  font-weight: bold;
+}
+.video {
+  position: relative;
+  padding-bottom: 56.25%;
+  /* 16:9 */
+  padding-top: 25px;
+  height: 0;
+}
+.video iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.pictures {
+  /*
+   * For IE 6/7 only
+   * Include this rule to trigger hasLayout and contain floats.
+   */
+  /*
+   * Clearfix: contain floats
+   *
+   * For modern browsers
+   * 1. The space content is one way to avoid an Opera bug when the
+   *	`contenteditable` attribute is included anywhere else in the document.
+   *	Otherwise it causes space to appear at the top and bottom of elements
+   *	that receive the `clearfix` class.
+   * 2. The use of `table` rather than `block` is only necessary if using
+   *	`:before` to contain the top-margins of child elements.
+   */
+  /*
+   * For IE 6/7 only
+   * Include this rule to trigger hasLayout and contain floats.
+   */
+  zoom: 1;
+  /*
+   * Clearfix: contain floats
+   *
+   * For modern browsers
+   * 1. The space content is one way to avoid an Opera bug when the
+   *	`contenteditable` attribute is included anywhere else in the document.
+   *	Otherwise it causes space to appear at the top and bottom of elements
+   *	that receive the `clearfix` class.
+   * 2. The use of `table` rather than `block` is only necessary if using
+   *	`:before` to contain the top-margins of child elements.
+   */
+}
+.pictures:before,
+.pictures:after {
+  content: "";
+  display: table;
+}
+.pictures:after {
+  clear: both;
+}
+.pictures:before,
+.pictures:after {
+  content: "";
+  display: table;
+}
+.pictures:after {
+  clear: both;
+}
+.pictures ul {
+  margin: 0;
+  padding: 0;
+}
+.pictures ul li {
+  float: left;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  width: 25%;
+}
+.pictures ul li img {
+  width: 100%;
+  display: block;
 }
 body {
-  background: #000;
   color: #FFF;
-  border: 1px solid red;
+  background: #1b3b61;
+  background: -moz-linear-gradient(top, #1b3b61 0%, #000000 100%);
+  background: -webkit-gradient(left top, left bottom, color-stop(0%, #1b3b61), color-stop(100%, #000000));
+  background: -webkit-linear-gradient(top, #1b3b61 0%, #000000 100%);
+  background: -o-linear-gradient(top, #1b3b61 0%, #000000 100%);
+  background: -ms-linear-gradient(top, #1b3b61 0%, #000000 100%);
+  background: linear-gradient(to bottom, #1b3b61 0%, #000000 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#1b3b61', endColorstr='#000000', GradientType=0);
+}
+.page-row {
+  /*
+   * For IE 6/7 only
+   * Include this rule to trigger hasLayout and contain floats.
+   */
+  /*
+   * Clearfix: contain floats
+   *
+   * For modern browsers
+   * 1. The space content is one way to avoid an Opera bug when the
+   *	`contenteditable` attribute is included anywhere else in the document.
+   *	Otherwise it causes space to appear at the top and bottom of elements
+   *	that receive the `clearfix` class.
+   * 2. The use of `table` rather than `block` is only necessary if using
+   *	`:before` to contain the top-margins of child elements.
+   */
+  /*
+   * For IE 6/7 only
+   * Include this rule to trigger hasLayout and contain floats.
+   */
+  zoom: 1;
+  /*
+   * Clearfix: contain floats
+   *
+   * For modern browsers
+   * 1. The space content is one way to avoid an Opera bug when the
+   *	`contenteditable` attribute is included anywhere else in the document.
+   *	Otherwise it causes space to appear at the top and bottom of elements
+   *	that receive the `clearfix` class.
+   * 2. The use of `table` rather than `block` is only necessary if using
+   *	`:before` to contain the top-margins of child elements.
+   */
+}
+.page-row:before,
+.page-row:after {
+  content: "";
+  display: table;
+}
+.page-row:after {
+  clear: both;
+}
+.page-row:before,
+.page-row:after {
+  content: "";
+  display: table;
+}
+.page-row:after {
+  clear: both;
+}
+.about {
+  padding: 4em 0;
+}
+.getinvolved {
+  padding: 6em 0;
 }
