@@ -1,41 +1,101 @@
-.logo-wrapper {
-  float:left;
-  margin:1em;
-  margin-left: -100%;
-  width:150px;
+.header {
+  padding-top:.65em;
 
-  .logo {
-    background: transparent url("../img/logo_white.png") 0 0 no-repeat;
-    background-size: 150px 150px;
-    width:150px;
-    height:150px;
+  .logo a {
+    background: transparent url("../img/logo_white2.png") 0 0 no-repeat;
+    background-size: 180px 180px;
+    width: 180px;
+    height: 180px;
+    display: block;
+    margin: auto;
+
+    span {
+      .visuallyhidden();
+    }
+    &:hover {
+      border:0;
+    }
   }
+
+  .navigation {
+    display: none;
+
+    .right {
+      float:right;
+      .social {
+        margin-right:4em;
+      }
+    }
+    a.social.facebook {
+      margin-right:0;
+    }
+  }
+
 }
 
-.navigation {
-  float:left;
-  display:block;
-  width:100%;
-  margin-left:0;
-  margin-top:93px;
+@media all and (min-width: 960px) {
+  .header {
+    &:before {
+      margin-top: 95px;
+      width: 100%;
+      content: '';
+      position: absolute;
+      height: 1px;
+      background: #FFF;
+      background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 10%, rgba(255, 255, 255, 1) 44%, rgba(255, 255, 255, 0) 98%);
+    }
+    &:after {
+      margin-top: 140px;
+      width: 100%;
+      content: '';
+      position: absolute;
+      height: 1px;
+      background: #FFF;
+      background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 10%, rgba(255, 255, 255, 1) 44%, rgba(255, 255, 255, 0) 98%);
+    }
 
-  ul {
-    padding:0;
-    margin:0;
-    margin-left: 150px;
-    list-style-type: none;
-    background:#FFF;
-    .clearfix();
+    .logo-wrapper {
+      float: left;
+      margin: 0;
+      margin-left: -100%;
+      width: 320px;
 
-    li {
-      float:left;
-      padding:.5em 1em;
+      .logo a {
+        background: transparent url("../img/logo_white2.png") right 0 no-repeat;
+        background-size: 180px 180px;
+        width: 320px;
+        height: 180px;
+        display: block;
+      }
+    }
 
-      a {
-        text-decoration: none;
-        font-size:1.25em;
-        color:black;
-        font-weight: bold;
+    .navigation {
+      float: left;
+      display: block;
+      width: 100%;
+      margin-top: 96px;
+
+      ul {
+        padding: 0;
+        margin: 0;
+        margin-left: 320px;
+        height: 43px;
+        list-style-type: none;
+        .clearfix();
+
+        li {
+          float: left;
+          padding: .5em 1.5em;
+
+          &:first-child {
+            margin-left:2em;
+          }
+          a {
+            text-decoration: none;
+            font-size: 1.125em;
+            color: #FFF;
+          }
+        }
       }
     }
   }

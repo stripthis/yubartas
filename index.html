@@ -23,6 +23,7 @@
     <meta name="keywords" content="yubartas, documentary, humpack, whales, colombia, choco, pacific, marine reserves">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" href="favicon.ico"/>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="css/main.css">
     <script src="js/vendor/modernizr-3.3.1.min.js"></script>
 </head>
@@ -38,10 +39,24 @@
                             <li role="menuitem"><a href="#about">About</a></li>
                             <li role="menuitem"><a href="#photos">Photos</a></li>
                             <li role="menuitem"><a href="#takeaction">Take action</a></li>
+                            <li role="menuitem" class="right">
+                                <a href="https://www.twitter.com/quicaorg" class="twitter social icon-only">
+                                    <span>Twitter</span>
+                                </a>
+                            </li>
+                            <li role="menuitem" class="right">
+                                <a href="https://www.facebook.com/quica.org" class="facebook social icon-only">
+                                    <span>Facebook</span>
+                                </a>
+                            </li>
                         </ul>
                     </nav>
                     <div class="logo-wrapper">
-                        <h1 class="logo"><span class="visuallyhidden">Yubartas</span></h1>
+                        <h1 class="logo">
+                            <a href="http://www.yubartas.com">
+                                <span>Yubartas</span>
+                            </a>
+                        </h1>
                     </div>
                 </div>
             </div>
@@ -51,7 +66,7 @@
         <div class="grid">
             <div class="row">
                 <div class="col12">
-                    <div class="video">
+                    <div class="video" id="trailer">
                         <iframe src="https://player.vimeo.com/video/151145827" width="640" height="360" frameborder="0"
                             webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
                     </div>
@@ -62,8 +77,7 @@
     <div class="about page-row">
         <div class="grid">
             <div class="row">
-                <div class="col4">...</div>
-                <div class="col7 last">
+                <div id="about" class="push6 col6 last">
                     <h2>About</h2>
                     <p>
                         Yubartas is a groundbreaking documentary about humpbacks and their biggest threats! A journey through the
@@ -84,26 +98,36 @@
             </div>
         </div>
     </div>
-    <div class="pictures page-row">
+    <div id="photos" class="pictures page-row">
+        <h2>Pictures</h2>
         <ul>
-            <li><img src="img/image1.png" alt="A shot of a humpack whale underwater"/></li>
-            <li><img src="img/image2.png" alt="A picture of choco green coastline"/></li>
-            <li><img src="img/image4.png" alt="A picture of reef full of fishes"/></li>
-            <li><img src="img/image9.png" alt="A picture of manio cambiana director"/></li>
-            <li><img src="img/image5.png" alt="A picture of a fisherman"/></li>
-            <li><img src="img/image3.png" alt="A picture of reef full of fishes"/></li>
-            <li><img src="img/image8.png" alt="A picture of shrimp fishing vessel"/></li>
-            <li><img src="img/image6.png" alt="A picture of whales mating"/></li>
+            <li><img src="img/image1.jpg" alt="A shot of a humpack whale underwater"/></li>
+            <li><img src="img/image2.jpg" alt="A picture of choco green coastline"/></li>
+            <li><img src="img/image4.jpg" alt="A picture of reef full of fishes"/></li>
+            <li><img src="img/image9.jpg" alt="A picture of manio cambiana director"/></li>
+            <li><img src="img/image5.jpg" alt="A picture of a fisherman"/></li>
+            <li><img src="img/image3.jpg" alt="A picture of reef full of fishes"/></li>
+            <li><img src="img/image8.jpg" alt="A picture of shrimp fishing vessel"/></li>
+            <li><img src="img/image6.jpg" alt="A picture of whales mating"/></li>
         </ul>
     </div>
-    <div class="getinvolved page-row">
+    <div id="takeaction" class="getinvolved page-row">
         <div class="grid">
-            <div class="col4">...</div>
-            <div class="col7 last">
-                <h3>Spread the word!</h3>
+            <div class="row">
+            <div class="push6 col6 last">
+                <h2>Take action!</h2>
+                <h3>Spread the word</h3>
                 <p>
                     With more outreach we can have better impact to protect this pristine area.
+                </p><p>
+                    <a href="https://www.facebook.com/quica.org" class="facebook social button">
+                        <span>Facebook</span>
+                    </a>
+                    <a href="https://www.twitter.com/quicaorg" class="twitter social button">
+                        <span>Twitter</span>
+                    </a>
                 </p>
+
                 <h3>Donate</h3>
                 <p>
                     #yubartas will continue supporting the area by:
@@ -113,13 +137,30 @@
                     <li>Providing environmental trainings to the communities to keep protecting the area.</li>
                 </ul>
                 <p>
-                    If you have been moved by the issues in the film, please make a contribution here: http://igg.me/at/yubartas
+                    If you have been moved by the issues in the film, please make a contribution on our
+                    Indiegogo campaign page.
+                </p>
+                <p>
+                    <a class="button" href="http://igg.me/at/yubartas" target="_blank">
+                        Donate
+                    </a>
                 </p>
                 <h3>Visit Choco</h3>
                 <p>
-                    Coastal communities in the Colombian Pacific region make their living with whale watching and ecotourism activities. For local communities the whales bring hope and prosperity, they are an important source of income and  it creates employment and promotes sustainable development. Visit Choco!
+                    Coastal communities in the Colombian Pacific region make their living with whale watching and
+                    ecotourism activities. For local communities the whales bring hope and prosperity, they are an
+                    important source of income and  it creates employment and promotes sustainable development.
                 </p>
             </div>
+        </div>
+        </div>
+    </div>
+    <div class="page-row">
+        <div class="footer">
+            <a href="http://www.quica.org" target="_blank">&copy; 2016 Quica.org</a>
+            <a href="http://www.enova-tech.net" class="e-nova" target="_blank">
+                <span>Credit: E-nova</span>
+            </a>
         </div>
     </div>
 </div>

@@ -1,7 +1,7 @@
 /**!
  * @name		yubartas
  * @version		v0.0.1
- * @date		2016-05-07
+ * @date		2016-05-09
  * @copyright	(c) 2016 Quica
  * @source		git+https://github.com/stripthis/yubartas.git
  * @license		Artistic-2.0
@@ -437,11 +437,15 @@ html body .hidden {
 .clearfix:after {
   clear: both;
 }
+.right {
+  float: right;
+}
 body {
   font-family: 'Open Sans', Verdana, sans-serif;
   font-size: 100%;
   line-height: 1.42;
   font-weight: 400;
+  text-shadow: #000 1px 1px;
 }
 h1,
 h2 {
@@ -464,6 +468,9 @@ p {
   line-height: 1.5em;
   /* = 24px/16px */
   margin-bottom: 24px;
+}
+p + ul {
+  margin-top: -1em;
 }
 /* *********************************************************************************************************************
 	One% CSS Grid - 12 Columns Fluid CSS Grid System
@@ -568,6 +575,12 @@ p {
   width: 99%;
   margin: 0;
 }
+.row .push4 {
+  margin-left: 31%;
+}
+.row .push6 {
+  margin-left: 48%;
+}
 .col1 img,
 .col2 img,
 .col3 img,
@@ -602,89 +615,256 @@ p {
     float: none;
     width: 99%;
   }
+  .row .push4,
+  .row .push6 {
+    margin-left: 0%;
+  }
 }
-.logo-wrapper {
-  float: left;
-  margin: 1em;
-  margin-left: -100%;
-  width: 150px;
-}
-.logo-wrapper .logo {
-  background: transparent url("../img/logo_white.png") 0 0 no-repeat;
-  background-size: 150px 150px;
-  width: 150px;
-  height: 150px;
-}
-.navigation {
-  float: left;
-  display: block;
-  width: 100%;
-  margin-left: 0;
-  margin-top: 93px;
-}
-.navigation ul {
-  padding: 0;
-  margin: 0;
-  margin-left: 150px;
-  list-style-type: none;
-  background: #FFF;
-  /*
-   * For IE 6/7 only
-   * Include this rule to trigger hasLayout and contain floats.
-   */
-  /*
-   * Clearfix: contain floats
-   *
-   * For modern browsers
-   * 1. The space content is one way to avoid an Opera bug when the
-   *	`contenteditable` attribute is included anywhere else in the document.
-   *	Otherwise it causes space to appear at the top and bottom of elements
-   *	that receive the `clearfix` class.
-   * 2. The use of `table` rather than `block` is only necessary if using
-   *	`:before` to contain the top-margins of child elements.
-   */
-  /*
-   * For IE 6/7 only
-   * Include this rule to trigger hasLayout and contain floats.
-   */
-  zoom: 1;
-  /*
-   * Clearfix: contain floats
-   *
-   * For modern browsers
-   * 1. The space content is one way to avoid an Opera bug when the
-   *	`contenteditable` attribute is included anywhere else in the document.
-   *	Otherwise it causes space to appear at the top and bottom of elements
-   *	that receive the `clearfix` class.
-   * 2. The use of `table` rather than `block` is only necessary if using
-   *	`:before` to contain the top-margins of child elements.
-   */
-}
-.navigation ul:before,
-.navigation ul:after {
-  content: "";
-  display: table;
-}
-.navigation ul:after {
-  clear: both;
-}
-.navigation ul:before,
-.navigation ul:after {
-  content: "";
-  display: table;
-}
-.navigation ul:after {
-  clear: both;
-}
-.navigation ul li {
-  float: left;
-  padding: .5em 1em;
-}
-.navigation ul li a {
+/* unvisited link */
+a:link,
+a:visited,
+a:hover,
+a:active {
+  color: #FFF;
   text-decoration: none;
-  font-size: 1.25em;
-  color: black;
-  font-weight: bold;
+}
+a:hover {
+  border-bottom: 1px dotted rgba(255, 255, 255, 0.3);
+}
+a.button {
+  margin: 0 .5em .5em 0;
+  border: 1px solid #FFF;
+  padding: .5em 1em;
+  display: inline-block;
+  clear: both;
+  border-radius: 3px;
+  min-width: 5em;
+  text-align: center;
+}
+a.social {
+  margin-top: .125em;
+}
+a.social span {
+  margin-left: 2em;
+}
+a.social.icon-only {
+  padding: 0;
+  width: 1.25em;
+  height: 1.25em;
+}
+a.social.icon-only span {
+  /*
+   * Extends the .visuallyhidden class to allow the element to be focusable
+   * when navigated to via the keyboard: h5bp.com/p
+   */
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+  /*
+   * Extends the .visuallyhidden class to allow the element to be focusable
+   * when navigated to via the keyboard: h5bp.com/p
+   */
+}
+a.social.icon-only span .focusable:active,
+a.social.icon-only span .focusable:focus {
+  clip: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  position: static;
+  width: auto;
+}
+a.social.icon-only span .focusable:active,
+a.social.icon-only span .focusable:focus {
+  clip: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  position: static;
+  width: auto;
+}
+a.social.twitter {
+  background: transparent url("../img/twitter-white.svg") 0 0 no-repeat;
+  background-size: 1.25em  1.25em;
+}
+a.social.facebook {
+  background: transparent url("../img/facebook-white.svg") 0 0 no-repeat;
+  background-size: 1.25em  1.25em;
+}
+a.social.button {
+  background-position: 1em center;
+}
+.header {
+  padding-top: .65em;
+}
+.header .logo a {
+  background: transparent url("../img/logo_white2.png") 0 0 no-repeat;
+  background-size: 180px 180px;
+  width: 180px;
+  height: 180px;
+  display: block;
+  margin: auto;
+}
+.header .logo a span {
+  /*
+   * Extends the .visuallyhidden class to allow the element to be focusable
+   * when navigated to via the keyboard: h5bp.com/p
+   */
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+  /*
+   * Extends the .visuallyhidden class to allow the element to be focusable
+   * when navigated to via the keyboard: h5bp.com/p
+   */
+}
+.header .logo a span .focusable:active,
+.header .logo a span .focusable:focus {
+  clip: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  position: static;
+  width: auto;
+}
+.header .logo a span .focusable:active,
+.header .logo a span .focusable:focus {
+  clip: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  position: static;
+  width: auto;
+}
+.header .logo a:hover {
+  border: 0;
+}
+.header .navigation {
+  display: none;
+}
+.header .navigation .right {
+  float: right;
+}
+.header .navigation .right .social {
+  margin-right: 4em;
+}
+.header .navigation a.social.facebook {
+  margin-right: 0;
+}
+@media all and (min-width: 960px) {
+  .header:before {
+    margin-top: 95px;
+    width: 100%;
+    content: '';
+    position: absolute;
+    height: 1px;
+    background: #FFF;
+    background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, #ffffff 10%, #ffffff 44%, rgba(255, 255, 255, 0) 98%);
+  }
+  .header:after {
+    margin-top: 140px;
+    width: 100%;
+    content: '';
+    position: absolute;
+    height: 1px;
+    background: #FFF;
+    background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, #ffffff 10%, #ffffff 44%, rgba(255, 255, 255, 0) 98%);
+  }
+  .header .logo-wrapper {
+    float: left;
+    margin: 0;
+    margin-left: -100%;
+    width: 320px;
+  }
+  .header .logo-wrapper .logo a {
+    background: transparent url("../img/logo_white2.png") right 0 no-repeat;
+    background-size: 180px 180px;
+    width: 320px;
+    height: 180px;
+    display: block;
+  }
+  .header .navigation {
+    float: left;
+    display: block;
+    width: 100%;
+    margin-top: 96px;
+  }
+  .header .navigation ul {
+    padding: 0;
+    margin: 0;
+    margin-left: 320px;
+    height: 43px;
+    list-style-type: none;
+    /*
+   * For IE 6/7 only
+   * Include this rule to trigger hasLayout and contain floats.
+   */
+    /*
+   * Clearfix: contain floats
+   *
+   * For modern browsers
+   * 1. The space content is one way to avoid an Opera bug when the
+   *	`contenteditable` attribute is included anywhere else in the document.
+   *	Otherwise it causes space to appear at the top and bottom of elements
+   *	that receive the `clearfix` class.
+   * 2. The use of `table` rather than `block` is only necessary if using
+   *	`:before` to contain the top-margins of child elements.
+   */
+    /*
+   * For IE 6/7 only
+   * Include this rule to trigger hasLayout and contain floats.
+   */
+    zoom: 1;
+    /*
+   * Clearfix: contain floats
+   *
+   * For modern browsers
+   * 1. The space content is one way to avoid an Opera bug when the
+   *	`contenteditable` attribute is included anywhere else in the document.
+   *	Otherwise it causes space to appear at the top and bottom of elements
+   *	that receive the `clearfix` class.
+   * 2. The use of `table` rather than `block` is only necessary if using
+   *	`:before` to contain the top-margins of child elements.
+   */
+  }
+  .header .navigation ul:before,
+  .header .navigation ul:after {
+    content: "";
+    display: table;
+  }
+  .header .navigation ul:after {
+    clear: both;
+  }
+  .header .navigation ul:before,
+  .header .navigation ul:after {
+    content: "";
+    display: table;
+  }
+  .header .navigation ul:after {
+    clear: both;
+  }
+  .header .navigation ul li {
+    float: left;
+    padding: .5em 1.5em;
+  }
+  .header .navigation ul li:first-child {
+    margin-left: 2em;
+  }
+  .header .navigation ul li a {
+    text-decoration: none;
+    font-size: 1.125em;
+    color: #FFF;
+  }
 }
 .video {
   position: relative;
@@ -701,6 +881,7 @@ p {
   height: 100%;
 }
 .pictures {
+  padding: 1em;
   /*
    * For IE 6/7 only
    * Include this rule to trigger hasLayout and contain floats.
@@ -756,24 +937,98 @@ p {
 .pictures ul li {
   float: left;
   list-style-type: none;
-  padding: 0;
   margin: 0;
-  width: 25%;
+  padding: 0 0em 1em 0 ;
+  box-sizing: border-box;
+  width: 100%;
 }
 .pictures ul li img {
   width: 100%;
   display: block;
 }
+@media all and (min-width: 450px) {
+  .pictures {
+    padding: 0em;
+  }
+  .pictures h2 {
+    display: none;
+  }
+  .pictures ul li {
+    padding: 0 .5em 1em .5em;
+    width: 50%;
+  }
+}
+@media all and (min-width: 768px) {
+  .pictures {
+    padding: 0em;
+  }
+  .pictures h2 {
+    display: none;
+  }
+  .pictures ul li {
+    padding: 0em;
+    width: 25%;
+  }
+}
+.footer {
+  padding: 1em;
+  text-align: center;
+}
+.footer .e-nova {
+  margin: 1em auto;
+  position: relative;
+  display: block;
+  width: 16px;
+  height: 16px;
+  background: transparent url("../img/enova_white.png") 0 0 no-repeat;
+  background-size: 16px 16px;
+}
+.footer .e-nova span {
+  /*
+   * Extends the .visuallyhidden class to allow the element to be focusable
+   * when navigated to via the keyboard: h5bp.com/p
+   */
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+  /*
+   * Extends the .visuallyhidden class to allow the element to be focusable
+   * when navigated to via the keyboard: h5bp.com/p
+   */
+}
+.footer .e-nova span .focusable:active,
+.footer .e-nova span .focusable:focus {
+  clip: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  position: static;
+  width: auto;
+}
+.footer .e-nova span .focusable:active,
+.footer .e-nova span .focusable:focus {
+  clip: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  position: static;
+  width: auto;
+}
+.footer .e-nova:hover {
+  background: transparent url("../img/enova_orange.png") 0 0 no-repeat;
+  background-size: 16px 16px;
+  text-decoration: none;
+  border: 0;
+}
 body {
   color: #FFF;
-  background: #1b3b61;
-  background: -moz-linear-gradient(top, #1b3b61 0%, #000000 100%);
-  background: -webkit-gradient(left top, left bottom, color-stop(0%, #1b3b61), color-stop(100%, #000000));
-  background: -webkit-linear-gradient(top, #1b3b61 0%, #000000 100%);
-  background: -o-linear-gradient(top, #1b3b61 0%, #000000 100%);
-  background: -ms-linear-gradient(top, #1b3b61 0%, #000000 100%);
-  background: linear-gradient(to bottom, #1b3b61 0%, #000000 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#1b3b61', endColorstr='#000000', GradientType=0);
+  background: #02347d;
+  background: linear-gradient(to bottom, #02347d 30%, #000000 70%);
 }
 .page-row {
   /*
@@ -824,9 +1079,28 @@ body {
 .page-row:after {
   clear: both;
 }
-.about {
-  padding: 4em 0;
+#container {
+  background: transparent url("../img/underwater3.jpg") center 0px no-repeat;
+  background-size: 200% auto;
 }
-.getinvolved {
-  padding: 6em 0;
+@media all and (min-width: 960px) {
+  #container {
+    background: transparent url("../img/underwater3.jpg") center 0px no-repeat;
+    background-size: 100% auto;
+  }
+  .trailer {
+    z-index: 2;
+  }
+  .about {
+    padding: 2em 0  5em 0;
+    background: transparent url("../img/whale_family2.svg") 10% 50% no-repeat;
+    background-size: 50% auto;
+    background-attachment: fixed;
+  }
+  .getinvolved {
+    padding: 3em 0 3em 0;
+    background: transparent url("../img/whale_star.svg") 0% 30% no-repeat;
+    background-size: 42% auto;
+    background-attachment: fixed;
+  }
 }

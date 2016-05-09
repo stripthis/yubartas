@@ -1,26 +1,40 @@
 body {
   color:@text-default;
-  background: rgba(27,59,97,1);
-  background: -moz-linear-gradient(top, rgba(27,59,97,1) 0%, rgba(0,0,0,1) 100%);
-  background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(27,59,97,1)), color-stop(100%, rgba(0,0,0,1)));
-  background: -webkit-linear-gradient(top, rgba(27,59,97,1) 0%, rgba(0,0,0,1) 100%);
-  background: -o-linear-gradient(top, rgba(27,59,97,1) 0%, rgba(0,0,0,1) 100%);
-  background: -ms-linear-gradient(top, rgba(27,59,97,1) 0%, rgba(0,0,0,1) 100%);
-  background: linear-gradient(to bottom, rgba(27,59,97,1) 0%, rgba(0,0,0,1) 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1b3b61', endColorstr='#000000', GradientType=0 );
-
+  background: rgba(2,52,125,1);
+  background: linear-gradient(to bottom, rgba(2,52,125,1) 30%, rgba(0,0,0,1) 70%);
 }
 .page-row {
   .clearfix();
 }
+#container {
+  background: transparent url("../img/underwater3.jpg") center 0px no-repeat;
+  background-size: 200% auto;
+}
 
-.trailer {
-}
-.about {
-  padding:4em 0;
-}
-.pictures {
-}
-.getinvolved {
-  padding:6em 0;
+@media all and (min-width: 960px) {
+  #container {
+    background: transparent url("../img/underwater3.jpg") center 0px no-repeat;
+    background-size: 100% auto;
+  }
+
+  .trailer {
+    z-index: 2;
+  }
+
+  .about {
+    padding: 2em 0  5em 0;
+    background: transparent url("../img/whale_family2.svg") 10% 50% no-repeat;
+    background-size: 50% auto;
+    background-attachment: fixed;
+  }
+
+  .pictures {
+  }
+
+  .getinvolved {
+    padding: 3em 0 3em 0;
+    background: transparent url("../img/whale_star.svg") 0% 30% no-repeat;
+    background-size: 42% auto;
+    background-attachment: fixed;
+  }
 }

@@ -1,20 +1,50 @@
 .pictures {
+  padding:1em;
+
   .clearfix();
   ul {
     margin:0;
     padding:0;
   }
   ul li {
-    float:left;
+    float: left;
     list-style-type: none;
-    padding:0;
     margin:0;
-    width:25%;
+    padding:0 0em 1em 0 ;
+    box-sizing: border-box;
+    width:100%;
 
     img {
       width:100%;
       display:block;
     }
   }
+}
 
+@media all and (min-width: 450px) {
+  .pictures {
+    padding:0em;
+
+    h2 {
+      display:none;
+    }
+    ul li {
+      padding:0 .5em 1em .5em;
+      width:50%;
+    }
+  }
+}
+
+@media all and (min-width: 768px) {
+  .pictures {
+    padding:0em;
+
+    h2 {
+      display:none;
+    }
+    ul li {
+      padding:0em;
+      width:25%;
+    }
+  }
 }
