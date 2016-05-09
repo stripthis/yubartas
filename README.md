@@ -29,6 +29,7 @@ Learn more
 
 - [Twitter](https://twitter.com/QuicaOrg)
 - [Facebook](https://www.facebook.com/yubartas2015)
+- [Indiegogo](https://www.indiegogo.com/projects/yubartas#/)
 
 
 License
